@@ -16,12 +16,17 @@ services:
   db:
     image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: mydb
     networks:
       - backend
+    volumes:
+      - mysql_data:/var/lib/mysql
 
 networks:
   frontend:
   backend:
+
+volumes:
+  mysql_data:
 
