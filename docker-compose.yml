@@ -3,30 +3,22 @@ version: '3.1'
 services:
 
   web:
-    image: nginx:alpine
+    image: praqma/network-multitool
     networks:
       - frontend
 
   app:
-    image: nginx:alpine
+    image: praqma/network-multitool
     networks:
       - frontend
       - backend
 
   db:
-    image: mysql:5.7
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: mydb
+    image: praqma/network-multitool
     networks:
       - backend
-    volumes:
-      - mysql_data:/var/lib/mysql
 
 networks:
   frontend:
   backend:
-
-volumes:
-  mysql_data:
 
